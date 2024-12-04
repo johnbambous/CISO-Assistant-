@@ -1,0 +1,707 @@
+urn: urn:swift:risk:library:swift-cscf
+locale: en
+ref_id: SWIFT CSCF
+name: SWIFT Customer Security Controls Framework v2023
+description: 'This document establishes a set of mandatory and advisory security controls
+  for the operating environment of Swift
+
+  users. Mandatory security controls build on existing guidance and establish a security
+  baseline for the entire user
+
+  community. Advisory controls are optional best practices that Swift recommends each
+  user to implement in the
+
+  operating environment. This document must be read in conjunction with the CSP FAQ
+  Swift Knowledge Centre
+
+  article 5021823 which provides additional valuable information.
+
+  https://www2.swift.com/knowledgecentre/publications/cscf_dd/61.0'
+copyright: SWIFT
+version: 1
+provider: SWIFT
+packager: John EHLEN
+objects:
+  framework:
+    urn: urn:swift:risk:framework:swift-cscf
+    ref_id: SWIFT CSCF
+    name: SWIFT Customer Security Controls Framework v2023
+    description: 'This document establishes a set of mandatory and advisory security
+      controls for the operating environment of Swift
+
+      users. Mandatory security controls build on existing guidance and establish
+      a security baseline for the entire user
+
+      community. Advisory controls are optional best practices that Swift recommends
+      each user to implement in the
+
+      operating environment. This document must be read in conjunction with the CSP
+      FAQ Swift Knowledge Centre
+
+      article 5021823 which provides additional valuable information.
+
+      https://www2.swift.com/knowledgecentre/publications/cscf_dd/61.0'
+    min_score: 1
+    max_score: 5
+    scores_definition:
+    - score: 1
+      name: Initial
+      description: 'No Process documentation or not formally approved by management.
+
+        Standard process does not exist.'
+    - score: 2
+      name: Repeatable
+      description: 'Formally approved Process documentation exists but not reviewed
+        in the previous 2 years.
+
+        Ad-hoc process exists and is done informally.'
+    - score: 3
+      name: Defined
+      description: 'Formally approved Process documentation exists, and exceptions
+        are documented and approved. Documented & approved exceptions < 5% of the
+        time.
+
+        Formal process exists and is implemented. Evidence available for most activities.
+        Less than 10% process exceptions.'
+    - score: 4
+      name: Managed
+      description: 'Formally approved Process documentation exists, and exceptions
+        are documented and approved. Documented & approved exceptions < 3% of the
+        time.
+
+        Formal process exists and is implemented. Evidence available for all activities.
+        Detailed metrics of the process are captured and reported.
+
+        Minimal target for metrics has been established. Less than 5% of process exceptions.'
+    - score: 5
+      name: Optimizing
+      description: 'Formally approved Process documentation exists, and exceptions
+        are documented and approved. Documented & approved exceptions < 0,5% of the
+        time.
+
+        Formal process exists and is implemented. Evidence available for all activities.
+        Detailed metrics of the process are captured and reported.
+
+        Minimal target for metrics has been established and continually improving.
+        Less than 1% of process exceptions.'
+    implementation_groups_definition:
+    - ref_id: A1.M
+      name: Architecture A1 - Mandatory
+      description: null
+    - ref_id: A1.A
+      name: Architecture A1 - Advisory
+      description: null
+    - ref_id: A2.M
+      name: Architecture A2 - Mandatory
+      description: null
+    - ref_id: A2.A
+      name: Architecture A2 - Advisory
+      description: null
+    - ref_id: A3.M
+      name: Architecture A3 - Mandatory
+      description: null
+    - ref_id: A3.A
+      name: Architecture A3 - Advisory
+      description: null
+    - ref_id: A4.M
+      name: Architecture A4 - Mandatory
+      description: null
+    - ref_id: A4.A
+      name: Architecture A4 - Advisory
+      description: null
+    - ref_id: B.M
+      name: Architecture B - Mandatory
+      description: null
+    - ref_id: B.A
+      name: Architecture B - Advisory
+      description: null
+    requirement_nodes:
+    - urn: urn:swift:risk:req_node:swift-cscf:node2
+      assessable: false
+      depth: 1
+      name: Secure your environment
+    - urn: urn:swift:risk:req_node:swift-cscf:1
+      assessable: false
+      depth: 2
+      parent_urn: urn:swift:risk:req_node:swift-cscf:node2
+      ref_id: '1'
+      name: Restrict Internet Access and Protect Critical Systems from General IT
+        Environment
+    - urn: urn:swift:risk:req_node:swift-cscf:1.1
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:1
+      ref_id: '1.1'
+      name: SWIFT Environment Protection
+      description: Ensure the protection of the user's local SWIFT infrastructure
+        from potentially compromised elements of the general IT environment and external
+        environment.
+      annotation: A separated secure zone safeguards the user's SWIFT infrastructure
+        from compromises and attacks on the broader enterprise and external environments.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+    - urn: urn:swift:risk:req_node:swift-cscf:1.2
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:1
+      ref_id: '1.2'
+      name: Operating System Privilieged Account Control
+      description: Restrict and control the allocation and usage of administrator-level
+        operating system accounts
+      annotation: Access to administrator-level operating system accounts is restricted
+        to the maximum extent possible. Usage is controlled, monitored, and only permitted
+        for relevant activities such as software installation and configuration, maintenance,
+        and emergency activities. At all other times, an account with the least privilege
+        access is used.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.A
+    - urn: urn:swift:risk:req_node:swift-cscf:1.3
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:1
+      ref_id: '1.3'
+      name: Virtualisation Platform Protection
+      description: 'Secure the virtualisation or cloud platform and virtual machines
+        (VMs) that host SWIFT-
+
+        related components to the same level as physical systems.'
+      annotation: Secure the virtualisation or cloud platform, virtualised machines,
+        and the supporting virtual infrastructure (such as firewalls) to the same
+        level as physical systems.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.A
+    - urn: urn:swift:risk:req_node:swift-cscf:1.4
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:1
+      ref_id: '1.4'
+      name: Restriction of Internet Access
+      description: Control/Protect Internet access from operator PCs and systems within
+        the secure zone.
+      annotation: All general-purpose and dedicated operator PCs, as well as systems
+        within the secure zone, have controlled direct internet access in line with
+        business
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:1.5
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:1
+      ref_id: '1.5'
+      name: Customer Environment Protection
+      description: "Ensure the protection of the customer\u2019s connectivity infrastructure\
+        \ from external environment and potentially compromised elements of the general\
+        \ IT environment."
+      annotation: A separated secure zone safeguards the customer's infrastructure
+        used for external connectivity from external environments and compromises
+        or attacks on the broader enterprise environment.
+      implementation_groups:
+      - A4.M
+    - urn: urn:swift:risk:req_node:swift-cscf:2
+      assessable: false
+      depth: 2
+      parent_urn: urn:swift:risk:req_node:swift-cscf:node2
+      ref_id: '2'
+      name: Reduce Attack Surface and Vulnerabilities
+    - urn: urn:swift:risk:req_node:swift-cscf:2.1
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: '2.1'
+      name: Internal Data Flow Security
+      description: Ensure the confidentiality, integrity, and authenticity of application
+        data flows between local SWIFT-related components.
+      annotation: Confidentiality, integrity, and authentication mechanisms are implemented
+        to protect SWIFT-related component-to-component or system-to-system data flows.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+    - urn: urn:swift:risk:req_node:swift-cscf:2.2
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: '2.2'
+      name: Security Updates
+      description: Minimise the occurrence of known technical vulnerabilities on operator
+        PCs and within the local SWIFT infrastructure by ensuring vendor support,
+        applying mandatory software updates, and applying timely security updates
+        aligned to the assessed risk.
+      annotation: All hardware and software inside the secure zone and on operator
+        PCs are within the support life cycle of the vendor, have been upgraded with
+        mandatory software updates, and have had security updates promptly applied.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:2.3
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: '2.3'
+      name: System Hardening
+      description: Reduce the cyber-attack surface of SWIFT-related components by
+        performing system hardening.
+      annotation: Security hardening is conducted and maintained on all in-scope components.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:2.4a
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: 2.4A
+      name: Back Office Data Flow Security
+      description: Ensure the confidentiality, integrity, and mutual authenticity
+        of data flows between local or remote SWIFT infrastructure components and
+        the back-office first hops they connect to.
+      annotation: Confidentiality, integrity, and authentication mechanisms (at system,
+        transport or message level) are implemented to protect data flows between
+        SWIFT infrastructure components and the back-office first hops they connect
+        to.
+      implementation_groups:
+      - A1.A
+      - A2.A
+      - A3.A
+      - A4.A
+      - B.A
+    - urn: urn:swift:risk:req_node:swift-cscf:2.5a
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: 2.5A
+      name: External Transmission Data Protection
+      description: Protect the confidentiality of SWIFT-related sensitive data transmitted
+        or stored outside of the secure zone as part of operational processes.
+      annotation: Sensitive SWIFT-related data that leaves the secure zone as a result
+        of operating system/application back-ups for recovery purposes, business transaction
+        data replication for archiving, or extraction for offline processing is protected
+        when stored outside of a secure zone and is encrypted while in transit to
+        the first storage location.
+      implementation_groups:
+      - A1.A
+      - A2.A
+      - A3.A
+      - A4.A
+      - B.A
+    - urn: urn:swift:risk:req_node:swift-cscf:2.6
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: '2.6'
+      name: Operator Session Confidentiality and Integrity
+      description: Protect the confidentiality and integrity of interactive operator
+        sessions that connect to the local or remote (operated by a service provider)
+        SWIFT infrastructure or service provider SWIFT-related applications.
+      annotation: The confidentiality and integrity of interactive operator sessions
+        that connect to service provider SWIFT-related applications or into the secure
+        zone are safeguarded.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:2.7
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: '2.7'
+      name: Vulnerability Scanning
+      description: Identify known vulnerabilities within the local SWIFT environment
+        by implementing a regular vulnerability scanning process and act upon results.
+      annotation: Secure zone (including dedicated operator PC) systems are scanned
+        for vulnerabilities using an up-to-date, reputable scanning tool and results
+        are considered for appropriate resolving actions.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.A
+    - urn: urn:swift:risk:req_node:swift-cscf:2.8
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: '2.8'
+      name: Critical Activity Outsourcing
+      description: Ensure the protection of the local SWIFT infrastructure from risks
+        exposed by the outsourcing of critical activities.
+      annotation: Critical outsourced activities are protected, at a minimum, to the
+        same standard of care as if operated within the originating organisation.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:2.9
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: '2.9'
+      name: Transaction Business Controls
+      description: Ensure outbound transaction activity within the expected bounds
+        of normal business.
+      annotation: Implement transaction detection, prevention, or validation controls,
+        or a combination of them to ensure outbound transaction activity within the
+        expected bounds of normal business.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:2.10
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: '2.10'
+      name: Application Hardening
+      description: Reduce the attack surface of SWIFT-related components by performing
+        application hardening on the SWIFT-compatible messaging and communication
+        interfaces, the SWIFT connector and related applications.
+      annotation: All messaging interfaces and communication interfaces products within
+        the SWIFT secure zone are SWIFT-compatible. Application security hardening
+        is conducted and maintained on all in-scope components.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+    - urn: urn:swift:risk:req_node:swift-cscf:2.11a
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:2
+      ref_id: 2.11A
+      name: RMA Business Controls
+      description: Restrict transaction activity to validated and approved business
+        counterparties.
+      annotation: Implement RMA controls to restrict transaction activity with effective
+        business counterparties.
+      implementation_groups:
+      - A1.A
+      - A2.A
+      - A3.A
+      - A4.A
+      - B.A
+    - urn: urn:swift:risk:req_node:swift-cscf:3
+      assessable: false
+      depth: 2
+      parent_urn: urn:swift:risk:req_node:swift-cscf:node2
+      ref_id: '3'
+      name: Physically Secure the Environment
+    - urn: urn:swift:risk:req_node:swift-cscf:3.1
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:3
+      ref_id: '3.1'
+      name: Physical Security
+      description: Prevent unauthorised physical access to sensitive equipment, workplace
+        environments, hosting sites, and storage.
+      annotation: Physical security controls are in place to protect access to sensitive
+        equipment, hosting sites, and storage.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:node23
+      assessable: false
+      depth: 1
+      name: Know & Limit Access
+    - urn: urn:swift:risk:req_node:swift-cscf:4
+      assessable: false
+      depth: 2
+      parent_urn: urn:swift:risk:req_node:swift-cscf:node23
+      ref_id: '4'
+      name: Prevent Compromise of Credentials
+    - urn: urn:swift:risk:req_node:swift-cscf:4.1
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:4
+      ref_id: '4.1'
+      name: Password Policy
+      description: Ensure passwords are sufficiently resistant against common password
+        attacks by implementing and enforcing an effective password policy.
+      annotation: All application and operating system accounts enforce passwords
+        with appropriate parameters such as length, complexity, validity, and the
+        number of failed login attempts. Similarly, personal tokens and mobile devices
+        enforce passwords or a Personal Identification Number (PIN) with appropriate
+        parameters.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:4.2
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:4
+      ref_id: '4.2'
+      name: Multi-Factor Authentication
+      description: Prevent that a compromise of a single authentication factor allows
+        access into SWIFT-related systems or applications by implementing multi-factor
+        authentication.
+      annotation: Multi-factor authentication is used for interactive user access
+        to SWIFT-related components or applications and operating system accounts.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:5
+      assessable: false
+      depth: 2
+      parent_urn: urn:swift:risk:req_node:swift-cscf:node23
+      ref_id: '5'
+      name: Manage Identities and Separate Privileges
+    - urn: urn:swift:risk:req_node:swift-cscf:5.1
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:5
+      ref_id: '5.1'
+      name: Logical Access Control
+      description: Enforce the security principles of need-to-know access, least privilege,
+        and separation of duties for operator accounts.
+      annotation: Accounts are defined according to the security principles of need-to-know
+        access, least privilege, and separation of duties.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:5.2
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:5
+      ref_id: '5.2'
+      name: Token Management
+      description: Ensure the proper management, tracking, and use of connected and
+        disconnected hardware authentication or personal tokens (when tokens are used).
+      annotation: Connected and disconnected hardware authentication or personal tokens
+        are managed appropriately during their assignment, distribution, revocation,
+        use, and storage.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:5.3a
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:5
+      ref_id: 5.3A
+      name: Staff Screening Process
+      description: To the extent permitted and practicable, ensure the trustworthiness
+        of staff operating the local SWIFT environment by performing regular staff
+        screening.
+      annotation: Staff operating the local SWIFT infrastructure are screened prior
+        to initial appointment in that role and periodically thereafter.
+      implementation_groups:
+      - A1.A
+      - A2.A
+      - A3.A
+      - A4.A
+      - B.A
+    - urn: urn:swift:risk:req_node:swift-cscf:5.4
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:5
+      ref_id: '5.4'
+      name: Physical and Logical Password Storage
+      description: Protect physically and logically the repository of recorded passwords.
+      annotation: Recorded passwords are stored in a protected physical or logical
+        location, with access restricted on a need-to-know basis.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:node32
+      assessable: false
+      depth: 1
+      name: Detect & Respond
+    - urn: urn:swift:risk:req_node:swift-cscf:6
+      assessable: false
+      depth: 2
+      parent_urn: urn:swift:risk:req_node:swift-cscf:node32
+      ref_id: '6'
+      name: Detect Anomalous Activity to Systems or Transaction Records
+    - urn: urn:swift:risk:req_node:swift-cscf:6.1
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:6
+      ref_id: '6.1'
+      name: Malware Protection
+      description: Ensure that local SWIFT infrastructure is protected against malware
+        and act upon results.
+      annotation: Anti-malware software from a reputable vendor is installed, kept
+        up-to-date on all systems, and results are considered for appropriate resolving
+        actions.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:6.2
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:6
+      ref_id: '6.2'
+      name: Software Integrity
+      description: Ensure the software integrity of the SWIFT-related components and
+        act upon results.
+      annotation: A software integrity check is performed at regular intervals on
+        messaging interface, communication interface, and other SWIFT-related components
+        and results are considered for appropriate resolving actions.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.A
+    - urn: urn:swift:risk:req_node:swift-cscf:6.3
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:6
+      ref_id: '6.3'
+      name: Database Integrity
+      description: Ensure the integrity of the database records for the SWIFT messaging
+        interface or the customer connector and act upon results.
+      annotation: A database integrity check is performed at regular intervals on
+        databases that record SWIFT transactions and results are considered for appropriate
+        resolving actions.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.A
+    - urn: urn:swift:risk:req_node:swift-cscf:6.4
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:6
+      ref_id: '6.4'
+      name: Logging and Monitoring
+      description: Record security events and detect anomalous actions and operations
+        within the local SWIFT environment.
+      annotation: Capabilities to detect anomalous activity are implemented, and a
+        process or tool is in place to keep and review logs.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:6.5a
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:6
+      ref_id: 6.5A
+      name: Intrusion Detection
+      description: Detect and contain anomalous network activity into the local or
+        remote SWIFT environment.
+      annotation: Intrusion detection is implemented to detect unauthorised network
+        access and anomalous activity.
+      implementation_groups:
+      - A1.A
+      - A2.A
+      - A3.A
+      - A4.A
+    - urn: urn:swift:risk:req_node:swift-cscf:7
+      assessable: false
+      depth: 2
+      parent_urn: urn:swift:risk:req_node:swift-cscf:node32
+      ref_id: '7'
+      name: Plan for Incident Response and Information Sharing
+    - urn: urn:swift:risk:req_node:swift-cscf:7.1
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:7
+      ref_id: '7.1'
+      name: Cyber Incident Response Planning
+      description: Ensure a consistent and effective approach for the management of
+        cyber incidents.
+      annotation: The user has a defined and tested cyber incident response plan.
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:7.2
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:7
+      ref_id: '7.2'
+      name: Security Training and Awareness
+      description: Ensure all staff are aware of and fulfil their security responsibilities
+        by performing regular awareness activities, and maintain security knowledge
+        of staff with privileged access.
+      annotation: "Annual security awareness sessions are conducted for all staff\
+        \ members with access to SWIFT-related systems. All staff with privileged\
+        \ access maintain knowledge through specific training or learning activities\
+        \ when relevant or appropriate (at management\u2019s discretion)."
+      implementation_groups:
+      - A1.M
+      - A2.M
+      - A3.M
+      - A4.M
+      - B.M
+    - urn: urn:swift:risk:req_node:swift-cscf:7.3a
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:7
+      ref_id: 7.3A
+      name: Penetration Testing
+      description: Validate the operational security configuration and identify security
+        gaps by performing penetration testing.
+      annotation: Application, system and network penetration testing is conducted
+        towards the secure zone and the operator PCs or, when used, the jump server.
+      implementation_groups:
+      - A1.A
+      - A2.A
+      - A3.A
+      - A4.A
+      - B.A
+    - urn: urn:swift:risk:req_node:swift-cscf:7.4a
+      assessable: true
+      depth: 3
+      parent_urn: urn:swift:risk:req_node:swift-cscf:7
+      ref_id: 7.4A
+      name: Scenario Risk Assessment
+      description: Evaluate the risk and readiness of the organisation based on plausible
+        cyber-attack scenarios.
+      annotation: "Scenario-based risk assessments are conducted regularly to improve\
+        \ incident response preparedness and to increase the maturity of the organisation\u2019\
+        s security programme."
+      implementation_groups:
+      - A1.A
+      - A2.A
+      - A3.A
+      - A4.A
+      - B.A
